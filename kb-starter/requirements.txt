@@ -1,0 +1,8 @@
+openai
+chromadb
+python-dotenv
+requests
+
+# 可选（若使用更高阶的工具）
+# llama-index
+# langchain
