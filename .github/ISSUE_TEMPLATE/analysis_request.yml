@@ -1,0 +1,54 @@
+name: "深入分析请求"
+about: "用于请求对某个 AI 项目做深入商业/技术分析（自动生成结构化 Issue）"
+title: "[分析请求] {project} — {short_summary}"
+labels:
+  - "type:analysis"
+  - "priority/medium"
+body:
+  - type: markdown
+    attributes:
+      value: "请填写以下信息以便团队快速响应。提交后系统会自动创建 Issue 并打上标签。"
+  - type: input
+    id: project
+    attributes:
+      label: "项目名称 (填写 GitHub 项目链接或关键字)"
+      description: "例如: Dify 或 https://github.com/langgenius/dify"
+      placeholder: "项目名称或链接"
+      validations:
+        required: true
+  - type: textarea
+    id: short_summary
+    attributes:
+      label: "简短的请求摘要（在标题中使用）"
+      description: "一两句话说明请求目标"
+      validations:
+        required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "详细说明"
+      description: "背景、目标、成功指标（KPI）等"
+      validations:
+        required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "优先级"
+      options:
+        - "high"
+        - "medium"
+        - "low"
+      validations:
+        required: true
+  - type: input
+    id: requester
+    attributes:
+      label: "请求人"
+      description: "你的名字或团队"
+  - type: checkboxes
+    id: include_code
+    attributes:
+      label: "是否包含相关代码/配置"
+      options:
+        - label: "我会粘贴代码/配置到 Issue 中"
+          value: "yes"

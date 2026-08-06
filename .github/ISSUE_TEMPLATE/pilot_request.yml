@@ -1,0 +1,52 @@
+name: "试点申请"
+about: "用于提交试点/PoC 申请，包含目标、范围与数据要求。"
+title: "[试点申请] {project} — {objective}"
+labels:
+  - "type:pilot"
+  - "priority/medium"
+body:
+  - type: markdown
+    attributes:
+      value: "提交试点申请以便评估运行可行性、资源与合规要求。"
+  - type: input
+    id: project
+    attributes:
+      label: "项目名称 / 链接"
+      validations:
+        required: true
+  - type: input
+    id: objective
+    attributes:
+      label: "试点目标（一句话）"
+      validations:
+        required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: "试点范围（数据、用户、时间）"
+      validations:
+        required: true
+  - type: textarea
+    id: data_requirements
+    attributes:
+      label: "所需数据 / 权限（如有）"
+  - type: dropdown
+    id: estimated_duration
+    attributes:
+      label: "预计时长"
+      options:
+        - "1 week"
+        - "2 weeks"
+        - "1 month"
+        - "Other"
+  - type: input
+    id: owner
+    attributes:
+      label: "负责人（团队/个人）"
+  - type: checkboxes
+    id: compliance_check
+    attributes:
+      label: "合规/隐私"
+      options:
+        - label: "我已确认数据合规/可公开使用"
+          value: "compliant"
